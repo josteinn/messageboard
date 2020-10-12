@@ -23,7 +23,7 @@ dbhandler.getUser = async function(id) {
 
 // ---------------------------------------
 dbhandler.getUserPsw = async function(email) {
-    let sql = 'SELECT id, email, psw FROM users WHERE email = $1';
+    let sql = 'SELECT id, email, psw, avatar FROM users WHERE email = $1';
     let values = [email];
     let result = await pool.query(sql, values);
     return result.rows;
